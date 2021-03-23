@@ -1,4 +1,4 @@
-module "ecr" {
+module "rds" {
   source = "git::https://github.com/jrdalino/aws-rds-terraform.git?ref=main"
   # General
   aws_region              = var.aws_region
