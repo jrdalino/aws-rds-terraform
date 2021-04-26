@@ -37,4 +37,10 @@ module "rds" {
   aws_db_instance_port = var.aws_db_instance_port
   aws_db_instance_storage_type = var.aws_db_instance_storage_type
   aws_db_instance_username = var.aws_db_instance_username
+
+  # Secrets Manager
+  aws_secretsmanager_secret_name = var.aws_secretsmanager_secret_name
+
+  # RDS Proxy
+  aws_db_proxy_name = var.aws_db_proxy_name
 }

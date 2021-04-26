@@ -57,3 +57,13 @@ variable "aws_db_instance_password" {}
 variable "aws_db_instance_port" {}
 variable "aws_db_instance_storage_type" {}
 variable "aws_db_instance_username" {}
+
+# Secrets Manager
+variable "aws_secretsmanager_secret_name" {}
+
+# IAM Role & Policy
+variable "rds_service_role_name" {}
+variable "rds_service_role_policy_name" {}
+
+# RDS Proxy
+variable "aws_db_proxy_name" {}
