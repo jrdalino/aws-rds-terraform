@@ -5,7 +5,7 @@ output "aws_db_subnet_group_id" {
 }
 
 output "aws_db_subnet_group_arn" {
-  value       = module.rds.this.aws_db_subnet_group_arn
+  value       = module.rds.aws_db_subnet_group_arn
   description = "The ARN of the db subnet group."
 }
 
@@ -77,7 +77,7 @@ output "aws_db_instance_backup_retention_period" {
 }
 
 output "aws_db_instance_backup_window" {
-  value       = aws_db_instance.this.aws_db_instance_backup_window
+  value       = module.rds.aws_db_instance_backup_window
   description = "The backup window."
 }
 
@@ -174,4 +174,88 @@ output "aws_db_instance_storage_encrypted" {
 output "aws_db_instance_username" {
   value       = module.rds.aws_db_instance_username
   description = "The master username for the database."
+}
+
+# Secrets Manager
+output "aws_secretsmanager_secret_id" {
+  value       = module.rds.aws_secretsmanager_secret_id
+  description = "Id of the secret."
+}
+
+output "aws_secretsmanager_secret_arn" {
+  value       = module.rds.aws_secretsmanager_secret_arn
+  description = "Amazon Resource Name (ARN) of the secret."
+}
+
+output "aws_secretsmanager_secret_rotation_enabled" {
+  value       = module.rds.aws_secretsmanager_secret_rotation_enabled
+  description = "Specifies whether automatic rotation is enabled for this secret."
+}
+
+# RDS Proxy
+output "aws_db_proxy_id" {
+  value       = module.rds.aws_db_proxy_id
+  description = "The Amazon Resource Name (ARN) for the proxy."
+}
+
+output "aws_db_proxy_arn" {
+  value       = module.rds.aws_db_proxy_arn
+  description = "The Amazon Resource Name (ARN) for the proxy."
+}
+
+output "aws_db_proxy_endpoint" {
+  value       = module.rds.aws_db_proxy_endpoint
+  description = "The endpoint that you can use to connect to the proxy. You include the endpoint value in the connection string for a database client application."
+}
+
+# RDS Proxy Default Target Group
+output "aws_db_proxy_default_target_group_id" {
+  value       = module.rds.aws_db_proxy_default_target_group_id
+  description = "Name of the RDS DB Proxy."
+}
+
+output "aws_db_proxy_default_target_group_arn" {
+  value       = module.rds.aws_db_proxy_default_target_group_arn
+  description = "The Amazon Resource Name (ARN) representing the target group."
+}
+
+output "aws_db_proxy_default_target_group_name" {
+  value       = module.rds.aws_db_proxy_default_target_group_name
+  description = "The name of the default target group."
+}
+
+# RDS Proxy Target
+output "aws_db_proxy_target_endpoint" {
+  value       = module.rds.aws_db_proxy_target_endpoint
+  description = "Hostname for the target RDS DB Instance. Only returned for RDS_INSTANCE type."
+}
+
+output "aws_db_proxy_target_id" {
+  value       = module.rds.aws_db_proxy_target_id
+  description = "Identifier of db_proxy_name, target_group_name, target type (e.g. RDS_INSTANCE or TRACKED_CLUSTER), and resource identifier separated by forward slashes (/)."
+}
+
+output "aws_db_proxy_target_port" {
+  value       = module.rds.aws_db_proxy_target_port
+  description = "Port for the target RDS DB Instance or Aurora DB Cluster."
+}
+
+output "aws_db_proxy_target_rds_resource_id" {
+  value       = module.rds.aws_db_proxy_target_rds_resource_id
+  description = "Identifier representing the DB Instance or DB Cluster target."
+}
+
+output "aws_db_proxy_target_target_arn" {
+  value       = module.rds.aws_db_proxy_target_target_arn
+  description = "Amazon Resource Name (ARN) for the DB instance or DB cluster. Currently not returned by the RDS API."
+}
+
+output "aws_db_proxy_target_tracked_cluster_id" {
+  value       = module.rds.aws_db_proxy_target_tracked_cluster_id
+  description = "DB Cluster identifier for the DB Instance target. Not returned unless manually importing an RDS_INSTANCE target that is part of a DB Cluster."
+}
+
+output "aws_db_proxy_target_type" {
+  value       = module.rds.aws_db_proxy_target_type
+  description = "Type of target. e.g. RDS_INSTANCE or TRACKED_CLUSTER"
 }

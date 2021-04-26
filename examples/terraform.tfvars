@@ -40,7 +40,7 @@ aws_db_instance_username                = "admin"
 aws_secretsmanager_secret_name = "bbsdm-shared-rds-secret"
 
 # IAM Role & Policy
-rds_service_role_name = "bbsdm-shared-rds-service-role"
+rds_service_role_name        = "bbsdm-shared-rds-service-role"
 rds_service_role_policy_name = "bbsdm-shared-rds-service-role-policy"
 
 # RDS Proxy
